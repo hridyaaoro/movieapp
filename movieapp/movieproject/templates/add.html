@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+<!--to make all input box same size-->
+  input {
+    height: 50px;
+    width: 200px;
+  }
+</style>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="text" name="name" placeholder="Enter name"><br>
+  <input type="file" name="img" placeholder="Enter image  "><br>
+  <input name="desc" placeholder="Enter description"><br>
+  <input type="number" name="year" placeholder="Enter year"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<div style="text-align: left;">
+    <a href="{% url 'movieapp:index'  %}" class="btn btn-primary">Back</a>
+</div>
+{% endblock %}
